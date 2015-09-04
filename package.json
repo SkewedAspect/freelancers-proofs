@@ -1,0 +1,23 @@
+{
+  "name": "freelancers-proofs",
+  "version": "0.0.0",
+  "description": "Proofs of concept for Freelancers game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkewedAspect/freelancers-proofs.git"
+  },
+  "author": "Christopher S. Case <chris.case@g33xnexus.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SkewedAspect/freelancers-proofs/issues"
+  },
+  "homepage": "https://github.com/SkewedAspect/freelancers-proofs#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "electron-prebuilt": "^0.31.2"
+  }
+}
