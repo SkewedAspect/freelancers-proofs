@@ -23,7 +23,7 @@ app.on('ready', () => {
     });
 
     // Load the main window
-    mainWindow.loadUrl('file://' + __dirname + '/client/index.html');
+    mainWindow.loadUrl('file://' + __dirname + '/dist/index.html');
 
     // Open the devtools.
     mainWindow.openDevTools();

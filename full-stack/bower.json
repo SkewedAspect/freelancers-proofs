@@ -1,0 +1,10 @@
+{
+  "name": "full-stack",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SkewedAspect/freelancers-proofs",
+  "authors": [
+    "Christopher S. Case <chris.case@g33xnexus.com>"
+  ],
+  "description": "Proof of Concept at a full stack electron app for freelancers",
+  "license": "MIT"
+}
