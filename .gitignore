@@ -4,6 +4,7 @@
 .idea
 
 # Build artifacts
+/full-stack/client/vendor
 full-stack/dist
 
 # Bower artifacts

@@ -29,16 +29,19 @@ module.exports = function(grunt)
                     dest: "<%= project.dist %>"
                 }]
             }
-        }
-        /*
+        },
         riot: {
             options: {
                 type : 'es6',
-                concat: true
+                concat: true,
+                modular: {
+                    type: 'common',
+                    deps: [ { './vendor/riot/riot': 'riot' } ]
+                }
             },
-            src: '<%= project.tags %>',
-            dest: '<%= project.dist %>/tags.js'
+            'dist/tags.js': '<%= project.tags %>'
         },
+        /*
         watch: {
             files: ['<%= jshint.files %>'],
             tasks: ['jshint']
@@ -56,7 +59,7 @@ module.exports = function(grunt)
 
     //------------------------------------------------------------------------------------------------------------------
 
-    grunt.registerTask("build", ["clean", "copy", "babel"]);
+    grunt.registerTask("build", ["clean", "copy", "babel", "riot"]);
     grunt.registerTask("default", ["build"]);
 
     //------------------------------------------------------------------------------------------------------------------
