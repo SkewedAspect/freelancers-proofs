@@ -8,6 +8,5 @@
   "description": "Proof of Concept at a full stack electron app for freelancers",
   "license": "MIT",
   "dependencies": {
-    "riot": "~2.2.4"
   }
 }

@@ -30,17 +30,6 @@ module.exports = function(grunt)
                 }]
             }
         },
-        riot: {
-            options: {
-                type : 'es6',
-                concat: true,
-                modular: {
-                    type: 'common',
-                    deps: [ { './vendor/riot/riot': 'riot' } ]
-                }
-            },
-            'dist/tags.js': '<%= project.tags %>'
-        },
         /*
         watch: {
             files: ['<%= jshint.files %>'],
