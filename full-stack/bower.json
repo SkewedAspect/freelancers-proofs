@@ -8,5 +8,7 @@
   "description": "Proof of Concept at a full stack electron app for freelancers",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "4.0.0-alpha",
+    "vue": "1.0.0-beta"
   }
 }

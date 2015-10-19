@@ -7,7 +7,7 @@ module.exports = function(grunt)
     grunt.initConfig({
         project: {
             tags: 'client/**/*.tag',
-            sass: 'client/**/*.sass',
+            scss: 'client/**/*.scss',
             dist: 'dist/'
         },
         clean: ["<%= project.dist %>"],
@@ -15,6 +15,12 @@ module.exports = function(grunt)
             index: {
                 src: 'client/index.html',
                 dest: 'dist/index.html'
+            },
+            html: {
+                expand: true,
+                cwd: 'client',
+                src: '**/*.html',
+                dest: 'dist'
             }
         },
         babel: {
@@ -30,6 +36,17 @@ module.exports = function(grunt)
                 }]
             }
         },
+        sass: {
+            dist: {
+                options: {
+                    includePaths: ['vendor/bootstrap/scss', 'client/scss', 'client'],
+                    style: 'expanded'
+                },
+                files: {
+                    'dist/css/app.css': 'client/scss/theme.scss',
+                }
+            }
+        },
         /*
         watch: {
             files: ['<%= jshint.files %>'],
@@ -40,7 +57,7 @@ module.exports = function(grunt)
 
     //------------------------------------------------------------------------------------------------------------------
 
-    grunt.loadNpmTasks('grunt-riot');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -48,7 +65,7 @@ module.exports = function(grunt)
 
     //------------------------------------------------------------------------------------------------------------------
 
-    grunt.registerTask("build", ["clean", "copy", "babel", "riot"]);
+    grunt.registerTask("build", ["clean", "copy", "sass", "babel"]);
     grunt.registerTask("default", ["build"]);
 
     //------------------------------------------------------------------------------------------------------------------
