@@ -10,7 +10,12 @@ import crashReporter from 'crash-reporter';
 
 //----------------------------------------------------------------------------------------------------------------------
 
-crashReporter.start();
+crashReporter.start({
+  productName: 'Freelancers',
+  companyName: 'Skewed Aspect Studios',
+  submitURL: 'http://skewedaspect.com/crash-report',
+  autoSubmit: true
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is GCed.
@@ -23,7 +28,7 @@ app.on('ready', () => {
     });
 
     // Load the main window
-    mainWindow.loadUrl('file://' + __dirname + '/dist/index.html');
+    mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
 
     // Open the devtools.
     mainWindow.openDevTools();
