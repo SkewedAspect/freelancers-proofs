@@ -5,7 +5,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 // Bootstrap Babel
-require('babel/register');
+require('babel-register');
 
 // Main Electron Application
 require('./main');

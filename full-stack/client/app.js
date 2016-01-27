@@ -4,9 +4,13 @@
 /// @module
 //----------------------------------------------------------------------------------------------------------------------
 
-import Vue from '../vendor/vue/dist/vue'
-import testSvc from './components/test/test'
-import './components/test_tag/test'
+import Vue from 'vue';
+import testSvc from './components/test/test';
+import TestTag from './components/test_tag/testTag.vue';
+
+//----------------------------------------------------------------------------------------------------------------------
+
+Vue.config.debug = true;
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -14,6 +18,9 @@ var app = new Vue({
     el: "#main-app",
     data: {
         msg: 'Hello'
+    },
+    components: {
+        test: TestTag
     },
     computed: {
         fullMsg: function()

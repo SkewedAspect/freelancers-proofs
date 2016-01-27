@@ -36,10 +36,23 @@ module.exports = function(grunt)
                 }]
             }
         },
+        vueify: {
+            components: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'client',
+                        src: 'components/**/*.vue',
+                        dest: 'dist/',
+                        ext: '.vue.js'
+                    }
+                ]
+            }
+        },
         sass: {
             dist: {
                 options: {
-                    includePaths: ['vendor/bootstrap/scss', 'client/scss', 'client'],
+                    includePaths: ['node_modules/bootstrap/scss', 'client/scss', 'client'],
                     style: 'expanded'
                 },
                 files: {
@@ -59,13 +72,14 @@ module.exports = function(grunt)
 
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-vueify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     //------------------------------------------------------------------------------------------------------------------
 
-    grunt.registerTask("build", ["clean", "copy", "sass", "babel"]);
+    grunt.registerTask("build", ["clean", "copy", "sass", "vueify", "babel"]);
     grunt.registerTask("default", ["build"]);
 
     //------------------------------------------------------------------------------------------------------------------
